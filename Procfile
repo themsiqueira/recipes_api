@@ -1,0 +1,1 @@
+web: node dist/src/app/shared/infra/http/server.js
