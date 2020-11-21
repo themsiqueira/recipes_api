@@ -36,9 +36,8 @@ const terminusConfiguration = Object.freeze({
   onShutdown,
 });
 
-const port = Number(process.env.PORT) || 4000;
-const hostname = process.env.HOST || 'localhost';
+const port = process.env.PORT;
 
-createTerminus(app, terminusConfiguration).listen(port, hostname, () => {
-  logger.info(`🚀 Server ready at http://${hostname}:${port}`);
+createTerminus(app, terminusConfiguration).listen(port, () => {
+  logger.info(`🚀 Server ready at port ${port}`);
 });
