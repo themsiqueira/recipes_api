@@ -53,7 +53,7 @@ A documentação da aplicação se encontra nas rotas abaixo:
   `http://localhost:3333/api/docs`
 
 * Produção:
-  `https://event-organizer-quero.herokuapp.com/api/docs`
+  `https://recipepuppy-api.herokuapp.com/api/docs`
 
 A chamada é do tipo HTTP/GET e deve ser feita pela url abaixo:
 
@@ -61,7 +61,7 @@ A chamada é do tipo HTTP/GET e deve ser feita pela url abaixo:
   `http://localhost:3333/recipes`
 
 * Produção:
-  `https://event-organizer-quero.herokuapp.com/recipes`
+  `https://recipepuppy-api.herokuapp.com/recipes`
 
 > Obs: a porta pode ser configurada no arquivo .env
 
@@ -71,7 +71,7 @@ A Aplicação recebe um query param na url _i_ com os ingredientes para busca da
   `http://localhost:3333/recipes?i=onion,tomato`
 
 * Produção:
-  `https://event-organizer-quero.herokuapp.com/recipes?i=onion,tomato`
+  `https://recipepuppy-api.herokuapp.com/recipes?i=onion,tomato`
 
 O retorno da chamada será conforme o exemplo abaixo:
 
@@ -94,3 +94,5 @@ O retorno da chamada será conforme o exemplo abaixo:
 }
 ```
 Esta é somente uma aplicação básica de estudo.
+
+> Obs: Endereço de produção da aplicação é https://recipepuppy-api.herokuapp.com/
