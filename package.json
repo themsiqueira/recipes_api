@@ -1,0 +1,82 @@
+{
+  "name": "recipe-api",
+  "version": "1.0.0",
+  "description": "a recipe api with nodejs with ts",
+  "main": "src",
+  "types": "src",
+  "engines": { "node": "14.15.0" },
+  "files": [
+    "src"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/ --ext .ts",
+    "lint:fix": "yarn lint --fix --quiet",
+    "start": "ts-node src/app/shared/infra/http/server.ts",
+    "build": "yarn clean && yarn postinstall",
+    "test": "jest --passWithNoTests",
+    "clean": "rimraf ./dist",
+    "postinstall": "tsc -p tsconfig.build.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint --fix && npm rum test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.8",
+    "@types/jest": "^26.0.13",
+    "@types/node": "^14.14.9",
+    "@types/supertest": "^2.0.10",
+    "@types/swagger-ui-express": "^4.1.2",
+    "@types/ua-parser-js": "^0.7.33",
+    "@types/yup": "^0.29.9",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.3.0",
+    "ts-node-dev": "^1.0.0-pre.62",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "@godaddy/terminus": "^4.4.1",
+    "@overnightjs/core": "^1.7.5",
+    "axios": "^0.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jest-chain": "^1.1.5",
+    "mime": "^2.4.6",
+    "multer": "^1.4.2",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "swagger-ui-express": "^4.1.4",
+    "tsyringe": "^4.3.0",
+    "ua-parser-js": "^0.7.22",
+    "winston": "^3.3.3",
+    "yup": "^0.29.3"
+  }
+}
